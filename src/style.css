@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+.navigation {
+  font-family: "open sans";
+  position: fixed;
+  height: 100vh;
+  width: 18.75rem;
+  background-color: hsl(231deg, 67%, 5%);
+  padding-inline: 2rem;
+}
+.navigation__profile-container {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.navigation__profile-container .img {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  border: 6px solid hsl(231deg, 18%, 21%);
+  background-color: white;
+  overflow: hidden;
+}
+.navigation__profile-container .img img {
+  width: 100%;
+}
+.navigation__profile-container p {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+}
+.navigation__social-medias {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 0.5rem;
+}
+.navigation__social-medias li > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  background-color: hsl(231deg, 18%, 21%);
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: 200ms;
+}
+.navigation__social-medias li > div:hover {
+  background-color: hsl(199deg, 83%, 47%);
+}
+.navigation__social-medias li > div img {
+  width: 60%;
+}
+.navigation__pages {
+  padding-top: 3rem;
+  list-style: none;
+  display: inline-block;
+  flex-direction: column;
+}
+.navigation__pages li {
+  display: flex;
+  gap: 0.35rem;
+  margin-bottom: 1.8rem;
+}
+.navigation__pages li:hover a {
+  color: hsl(0deg, 0%, 100%);
+}
+.navigation__pages li:hover .navigation__pages-icons {
+  filter: invert(59%) sepia(54%) saturate(4704%) hue-rotate(167deg) brightness(94%) contrast(85%);
+}
+.navigation__pages li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: hsl(231deg, 7%, 68%);
+  position: relative;
+  transition: 200ms;
+}
+.navigation__pages .navigation__pages-icons {
+  width: 25px;
+  height: 25px;
+  background-size: contain !important;
+  filter: invert(71%) sepia(0%) saturate(7216%) hue-rotate(325deg) brightness(93%) contrast(106%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*# sourceMappingURL=style.css.map */

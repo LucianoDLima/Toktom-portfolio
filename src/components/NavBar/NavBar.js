@@ -1,0 +1,89 @@
+import React from 'react';
+// Images
+import LogoFB from '../../assets/images/facebook-logo.svg';
+import LogoIN from '../../assets/images/instagram-logo.svg';
+import LogoLI from '../../assets/images/linkedin-logo.svg';
+import IconHome from '../../assets/images/home-icon.svg';
+import IconAbout from '../../assets/images/about-icon.svg';
+import IconProject from '../../assets/images/project-icon.svg';
+import IconContact from '../../assets/images/contact-icon.svg';
+import IconSkill from '../../assets/images/skill-icon.svg';
+
+const socialMedia = [
+  {
+    name: 'Facebook',
+    image: LogoFB,
+    link: 'https://facebook.com',
+  },
+  {
+    name: 'Instagram',
+    image: LogoIN,
+    link: 'https://instagram.com',
+  },
+  {
+    name: 'Linkedin',
+    image: LogoLI,
+    link: 'https://linkedin.com',
+  },
+];
+
+const pages = [
+  {
+    page: 'Home',
+    icon: IconHome,
+  },
+  {
+    page: 'About',
+    icon: IconAbout,
+  },
+  {
+    page: 'Skills',
+    icon: IconSkill,
+  },
+  {
+    page: 'Projects',
+    icon: IconProject,
+  },
+  {
+    page: 'Contact',
+    icon: IconContact,
+  },
+];
+
+const NavBar = () => {
+  const website = (link) => {
+    window.open(link, '_blank');
+  };
+
+  return (
+    <nav className="navigation">
+      <div className="navigation__profile-container">
+        <div className="img">
+          <img src='https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' alt='Toktom Picture'/>
+        </div>
+        <p>Toktom Wikiano</p>
+      </div>
+
+      <ul className="navigation__social-medias">
+        {socialMedia.map((sm) => (
+          <li key={sm.name}>
+            <div onClick={() => website(sm.link)}>
+              <img src={sm.image} />
+            </div>
+          </li>
+        ))}
+      </ul>
+
+      <ul className="navigation__pages">
+        {pages.map((nav) => (
+          <li key={nav.page}>
+            <div className="navigation__pages-icons" style={{ background: `url(${nav.icon})` }} />
+            <a href="#">{nav.page}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
+
+export default NavBar;
