@@ -7,6 +7,7 @@
 
 .active {
   color: hsl(0deg, 0%, 100%) !important;
+  font-weight: 600 !important;
 }
 
 .active-icon {
@@ -80,6 +81,7 @@
   display: flex;
   gap: 0.35rem;
   margin-bottom: 1.8rem;
+  cursor: pointer;
 }
 .navigation__pages li:hover a, .navigation__pages li:focus-within a {
   color: hsl(0deg, 0%, 100%);

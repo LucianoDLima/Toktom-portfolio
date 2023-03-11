@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // Images
 import LogoFB from '../../assets/images/facebook-logo.svg';
 import LogoIN from '../../assets/images/instagram-logo.svg';
@@ -60,6 +60,12 @@ const NavBar = () => {
     window.open(link, '_blank');
   };
 
+  const [activeIndex, setActiveIndex] = useState(-1);
+
+  const handleActivePages = (index) => {
+    setActiveIndex(index);
+  };
+
   return (
     <nav className="navigation">
       <div className="navigation__profile-container">
@@ -89,13 +95,17 @@ const NavBar = () => {
       </ul>
 
       <ul className="navigation__pages">
-        {pages.map((nav) => (
-          <li key={nav.page}>
+        {pages.map((nav, index) => (
+          <li key={nav.page} onClick={() => handleActivePages(index)}>
             <div
-              className="navigation__pages-icons"
+              className={`navigation__pages-icons ${
+                index === activeIndex ? 'active-icon' : ''
+              }`}
               style={{ background: `url(${nav.icon})` }}
             />
-            <a href={nav.link}>{nav.page}</a>
+            <a className={index === activeIndex ? 'active' : ''} href={nav.link}>
+              {nav.page}
+            </a>
           </li>
         ))}
       </ul>
