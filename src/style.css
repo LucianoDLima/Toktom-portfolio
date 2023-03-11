@@ -64,7 +64,7 @@
   cursor: pointer;
   transition: 200ms;
 }
-.navigation__social-medias li > div:hover {
+.navigation__social-medias li > div:hover, .navigation__social-medias li > div:focus {
   background-color: hsl(199deg, 83%, 47%);
 }
 .navigation__social-medias li > div img {
@@ -81,11 +81,11 @@
   gap: 0.35rem;
   margin-bottom: 1.8rem;
 }
-.navigation__pages li:hover a {
+.navigation__pages li:hover a, .navigation__pages li:focus-within a {
   color: hsl(0deg, 0%, 100%);
   font-weight: 600;
 }
-.navigation__pages li:hover .navigation__pages-icons {
+.navigation__pages li:hover .navigation__pages-icons, .navigation__pages li:focus-within .navigation__pages-icons {
   filter: invert(59%) sepia(54%) saturate(4704%) hue-rotate(167deg) brightness(94%) contrast(85%);
 }
 .navigation__pages li a {

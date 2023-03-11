@@ -31,27 +31,32 @@ const pages = [
   {
     page: 'Home',
     icon: IconHome,
+    link: '#Home',
   },
   {
     page: 'About',
     icon: IconAbout,
+    link: '#About',
   },
   {
     page: 'Skills',
     icon: IconSkill,
+    link: '#Skills',
   },
   {
     page: 'Publications',
     icon: IconProject,
+    link: '#Publications',
   },
   {
     page: 'Contact',
     icon: IconContact,
+    link: '#Contact',
   },
 ];
 
 const NavBar = () => {
-  const website = (link) => {
+  const websiteLink = (link) => {
     window.open(link, '_blank');
   };
 
@@ -59,15 +64,24 @@ const NavBar = () => {
     <nav className="navigation">
       <div className="navigation__profile-container">
         <div className="img">
-          <img src='https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' alt='Toktom Picture'/>
+          <img
+            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+            alt="Toktom Picture"
+          />
         </div>
         <p>Toktom Wikiano</p>
       </div>
 
       <ul className="navigation__social-medias">
-        {socialMedia.map((sm) => (
+        {socialMedia.map((sm, i) => (
           <li key={sm.name}>
-            <div onClick={() => website(sm.link)}>
+            <div
+              tabIndex="0"
+              onClick={() => websiteLink(sm.link)}
+              onKeyDown={(event) =>
+                event.key === 'Enter' ? websiteLink(sm.link) : ''
+              }
+            >
               <img src={sm.image} />
             </div>
           </li>
@@ -77,8 +91,11 @@ const NavBar = () => {
       <ul className="navigation__pages">
         {pages.map((nav) => (
           <li key={nav.page}>
-            <div className="navigation__pages-icons" style={{ background: `url(${nav.icon})` }} />
-            <a href="#">{nav.page}</a>
+            <div
+              className="navigation__pages-icons"
+              style={{ background: `url(${nav.icon})` }}
+            />
+            <a href={nav.link}>{nav.page}</a>
           </li>
         ))}
       </ul>
