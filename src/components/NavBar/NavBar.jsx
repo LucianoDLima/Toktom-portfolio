@@ -41,7 +41,7 @@ const pages = [
     icon: IconSkill,
   },
   {
-    page: 'Projects',
+    page: 'Publications',
     icon: IconProject,
   },
   {

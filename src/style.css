@@ -1,4 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.active {
+  color: hsl(0deg, 0%, 100%) !important;
+}
+
+.active-icon {
+  filter: invert(59%) sepia(54%) saturate(4704%) hue-rotate(167deg) brightness(94%) contrast(85%) !important;
+}
+
 .navigation {
   font-family: "open sans";
   position: fixed;
@@ -6,6 +20,7 @@
   width: 18.75rem;
   background-color: hsl(231deg, 67%, 5%);
   padding-inline: 2rem;
+  overflow-y: auto;
 }
 .navigation__profile-container {
   padding-top: 1rem;
@@ -68,6 +83,7 @@
 }
 .navigation__pages li:hover a {
   color: hsl(0deg, 0%, 100%);
+  font-weight: 600;
 }
 .navigation__pages li:hover .navigation__pages-icons {
   filter: invert(59%) sepia(54%) saturate(4704%) hue-rotate(167deg) brightness(94%) contrast(85%);
@@ -78,19 +94,13 @@
   text-decoration: none;
   color: hsl(231deg, 7%, 68%);
   position: relative;
-  transition: 200ms;
+  transition: 100ms;
 }
 .navigation__pages .navigation__pages-icons {
   width: 25px;
   height: 25px;
   background-size: contain !important;
   filter: invert(71%) sepia(0%) saturate(7216%) hue-rotate(325deg) brightness(93%) contrast(106%);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 /*# sourceMappingURL=style.css.map */

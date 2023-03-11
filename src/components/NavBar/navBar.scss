@@ -1,4 +1,5 @@
-@use '../../assets/variables/colors.scss' as *;
+@use '../../styles/colors.scss' as *;
+@use '../../styles/helpers.scss';
 
 .navigation {
   font-family: 'open sans';
@@ -7,6 +8,7 @@
   width: 18.75rem;
   background-color: $navbar-bg;
   padding-inline: 2rem;
+  overflow-y: auto;
 
   &__profile-container {
     padding-top: 1rem;
@@ -77,6 +79,7 @@
 
       &:hover a {
         color: $nav-pages-txt-hover;
+        font-weight: 600;
       }
       &:hover .navigation__pages-icons {
         filter: $filter-light-blue;
@@ -88,7 +91,7 @@
         text-decoration: none;
         color: $nav-pages-txt;
         position: relative;
-        transition: 200ms;
+        transition: 100ms;
       }
     }
 
@@ -100,3 +103,4 @@
     }
   }
 }
+

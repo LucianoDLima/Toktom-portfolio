@@ -1,0 +1,9 @@
+@use './colors.scss' as *;
+
+.active {
+  color: $nav-pages-txt-hover !important;
+}
+
+.active-icon {
+  filter: $nav-pages-svg-hover !important;
+}
