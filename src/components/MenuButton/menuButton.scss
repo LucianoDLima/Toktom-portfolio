@@ -1,0 +1,64 @@
+@use '../../styles/colors.scss' as *;
+
+$transitions: 300ms;
+$total-size: 40px;
+$stripe-width: 18px;
+$stripe-height: 2px;
+$stripe-radius: 5px;
+
+.menu-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $total-size;
+  height: $total-size;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all $transitions ease-in-out;
+  overflow: hidden;
+  background-color: $menu-button;
+
+  &__burguer {
+    width: $stripe-width;
+    height: $stripe-height;
+    background-color: $menu-stripes;
+    border-radius: $stripe-radius;
+    transition: all $transitions ease-in-out;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: $stripe-width;
+      height: $stripe-height;
+      background-color: $menu-stripes;
+      border-radius: $stripe-radius;
+      transition: all $transitions ease-in-out;
+    }
+
+    &::before {
+      transform: translateY(-6px);
+    }
+    &::after {
+      transform: translateY(6px);
+    }
+  }
+}
+
+// Animation 
+
+.menu-btn.open .menu-btn__burguer {
+  transform: translateX(-50px);
+  background: transparent;
+}
+
+.menu-btn.open .menu-btn__burguer::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn__burguer::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}

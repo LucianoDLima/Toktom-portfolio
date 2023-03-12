@@ -13,17 +13,17 @@ const socialMedia = [
   {
     name: 'Github',
     image: LogoGH,
-    link: 'https://github.com',
+    link: 'https://github.com/Toktom',
   },
   {
     name: 'Researchgate',
     image: LogoRG,
-    link: 'https://www.researchgate.net/',
+    link: 'https://www.researchgate.net/profile/Michael-Ackermann-3',
   },
   {
     name: 'Linkedin',
     image: LogoLI,
-    link: 'https://linkedin.com',
+    link: 'https://www.linkedin.com/in/michael-markus-ackermann/',
   },
 ];
 
