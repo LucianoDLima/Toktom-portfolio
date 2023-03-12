@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // Images
 import LogoRG from '../../assets/images/researchgate-logo.svg';
 import LogoLI from '../../assets/images/linkedin-logo.svg';
@@ -56,15 +56,22 @@ const pages = [
 ];
 
 const NavBar = () => {
+  const [activeIndex, setActiveIndex] = useState(-1);
+
   const websiteLink = (link) => {
     window.open(link, '_blank');
   };
 
-  const [activeIndex, setActiveIndex] = useState(-1);
-
   const handleActivePages = (index) => {
     setActiveIndex(index);
   };
+
+  // Responsible for making the right navbar selection active based on the URL
+  useEffect(() => {
+    const hash = window.location.hash;
+    const index = pages.findIndex((page) => page.link === hash);
+    setActiveIndex(index !== -1 ? index : 0)
+  }, [])
 
   return (
     <nav className="navigation">
