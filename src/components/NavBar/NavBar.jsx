@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 // Images
-import LogoFB from '../../assets/images/facebook-logo.svg';
-import LogoIN from '../../assets/images/instagram-logo.svg';
+import LogoRG from '../../assets/images/researchgate-logo.svg';
 import LogoLI from '../../assets/images/linkedin-logo.svg';
+import LogoGH from '../../assets/images/github-logo.svg';
 import IconHome from '../../assets/images/home-icon.svg';
 import IconAbout from '../../assets/images/about-icon.svg';
 import IconProject from '../../assets/images/project-icon.svg';
@@ -11,14 +11,14 @@ import IconSkill from '../../assets/images/skill-icon.svg';
 
 const socialMedia = [
   {
-    name: 'Facebook',
-    image: LogoFB,
-    link: 'https://facebook.com',
+    name: 'Github',
+    image: LogoGH,
+    link: 'https://github.com',
   },
   {
-    name: 'Instagram',
-    image: LogoIN,
-    link: 'https://instagram.com',
+    name: 'Researchgate',
+    image: LogoRG,
+    link: 'https://www.researchgate.net/',
   },
   {
     name: 'Linkedin',
