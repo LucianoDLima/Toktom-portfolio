@@ -77,6 +77,7 @@
   background-color: hsl(231deg, 67%, 5%);
   padding-inline: 2rem;
   overflow-y: auto;
+  transition: 400ms ease-in-out;
 }
 .navigation__profile-container {
   padding-top: 1rem;
@@ -159,6 +160,10 @@
   height: 25px;
   background-size: contain !important;
   filter: invert(71%) sepia(0%) saturate(7216%) hue-rotate(325deg) brightness(93%) contrast(106%);
+}
+
+.navigation.hide {
+  transform: translateX(-18.75rem);
 }
 
 /*# sourceMappingURL=style.css.map */

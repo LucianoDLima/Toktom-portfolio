@@ -55,7 +55,7 @@ const pages = [
   },
 ];
 
-const NavBar = () => {
+const NavBar = ({ navBarHide, tab }) => {
   const [activeIndex, setActiveIndex] = useState(-1);
 
   const websiteLink = (link) => {
@@ -66,21 +66,18 @@ const NavBar = () => {
     setActiveIndex(index);
   };
 
-  // Responsible for making the right navbar selection active based on the URL
+  // Responsible for making last selected navbar pages active based on the URL, if none were active, then the first will automatically be.
   useEffect(() => {
     const hash = window.location.hash;
     const index = pages.findIndex((page) => page.link === hash);
-    setActiveIndex(index !== -1 ? index : 0)
-  }, [])
+    setActiveIndex(index !== -1 ? index : 0);
+  }, []);
 
   return (
-    <nav className="navigation">
+    <nav className={`navigation ${navBarHide}`}>
       <div className="navigation__profile-container">
         <div className="img">
-          <img
-            src="https://github.com/Toktom.png"
-            alt="Toktom Picture"
-          />
+          <img src="https://github.com/Toktom.png" alt="Toktom Picture" />
         </div>
         <p>Michael Ackermann</p>
       </div>
@@ -89,7 +86,7 @@ const NavBar = () => {
         {socialMedia.map((sm, i) => (
           <li key={sm.name}>
             <div
-              tabIndex="0"
+              tabIndex={tab}
               onClick={() => websiteLink(sm.link)}
               onKeyDown={(event) =>
                 event.key === 'Enter' ? websiteLink(sm.link) : ''
@@ -110,7 +107,11 @@ const NavBar = () => {
               }`}
               style={{ background: `url(${nav.icon})` }}
             />
-            <a className={index === activeIndex ? 'active' : ''} href={nav.link}>
+            <a
+              className={index === activeIndex ? 'active' : ''}
+              href={nav.link}
+              tabIndex={tab}
+            >
               {nav.page}
             </a>
           </li>

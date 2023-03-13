@@ -4,18 +4,33 @@ import MenuButton from './components/MenuButton/MenuButton';
 import { useState } from 'react';
 
 function App() {
-  const [pressed, setPressed] = useState(false);
+  const [pressed, setPressed] = useState(true);
+  const [navigation, setNavigation] = useState(false);
 
-  const handleButton = () => {
+  const handleMenuButton = () => {
     setPressed((current) => !current);
+    setNavigation((current) => !current);
+    console.log(pressed, navigation);
   };
+
+  const handleEnterPress = event => {
+    if (event.key === 'Enter') {
+      handleMenuButton();
+    }
+  };
+
+
   return (
-    <div className='app'>
+    <div className="app">
       <MenuButton
-        menuBtn={() => handleButton()}
+        menuBtn={() => handleMenuButton()}
         menuClass={pressed === true ? 'open' : ''}
+        enterPress={handleEnterPress}
       />
-      <NavBar />
+      <NavBar
+        navBarHide={navigation === true ? 'hide' : ''}
+        tab={navigation === true ? '-1' : '0'}
+      />
       <main>
         <Home />
       </main>

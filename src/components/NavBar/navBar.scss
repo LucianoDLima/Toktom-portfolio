@@ -1,14 +1,17 @@
 @use '../../styles/colors.scss' as *;
 @use '../../styles/helpers.scss';
 
+$nav-width: 18.75rem;
+
 .navigation {
   font-family: 'open sans';
   position: fixed;
   height: 100vh;
-  width: 18.75rem;
+  width: $nav-width;
   background-color: $navbar-bg;
   padding-inline: 2rem;
   overflow-y: auto;
+  transition: 400ms ease-in-out;
 
   &__profile-container {
     padding-top: 1rem;
@@ -108,5 +111,9 @@
       filter: $nav-pages-svg;
     }
   }
+}
+
+.navigation.hide {
+  transform: translateX(-$nav-width);
 }
 
