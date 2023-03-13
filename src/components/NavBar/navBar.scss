@@ -1,7 +1,7 @@
 @use '../../styles/colors.scss' as *;
+@use '../../styles/typography.scss' as *;
+@use '../../styles/animation.scss' as *;
 @use '../../styles/helpers.scss';
-
-$nav-width: 18.75rem;
 
 .navigation {
   font-family: 'open sans';
@@ -11,7 +11,7 @@ $nav-width: 18.75rem;
   background-color: $navbar-bg;
   padding-inline: 2rem;
   overflow-y: auto;
-  transition: 400ms ease-in-out;
+  transition: $navbar-slide;
 
   &__profile-container {
     padding-top: 1rem;

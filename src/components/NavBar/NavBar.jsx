@@ -66,7 +66,7 @@ const NavBar = ({ navBarHide, tab }) => {
     setActiveIndex(index);
   };
 
-  // Responsible for making last selected navbar pages active based on the URL, if none were active, then the first will automatically be.
+  // Responsible for making last selected navbar option active based on the URL, if none is active, then the first will automatically be (Home)
   useEffect(() => {
     const hash = window.location.hash;
     const index = pages.findIndex((page) => page.link === hash);

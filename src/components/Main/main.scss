@@ -1,0 +1,7 @@
+@use '../../styles/animation.scss' as *;
+
+main {
+  height: 100vh;
+  box-sizing: border-box;
+  transition: $navbar-slide;
+}

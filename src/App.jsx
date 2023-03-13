@@ -1,7 +1,11 @@
 import NavBar from './components/NavBar/NavBar';
-import Home from './components/Home/Home';
 import MenuButton from './components/MenuButton/MenuButton';
+import Main from './components/Main/Main'
 import { useState } from 'react';
+
+const styleAnimation = [{
+  width: '300px'
+}]
 
 function App() {
   const [pressed, setPressed] = useState(true);
@@ -31,9 +35,7 @@ function App() {
         navBarHide={navigation === true ? 'hide' : ''}
         tab={navigation === true ? '-1' : '0'}
       />
-      <main>
-        <Home />
-      </main>
+      <Main widthControl={navigation === true ? '0px' : '300px'}/>
     </div>
   );
 }
